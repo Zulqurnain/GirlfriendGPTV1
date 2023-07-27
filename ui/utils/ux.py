@@ -6,7 +6,10 @@ def sidebar():
     with st.sidebar:
         api_key = st.text_input(
             "Steamship API Key",
-            value=st.session_state.get("steamship_api_key", "") or "",
+            value=st.session_state.get(
+                "steamship_api_key", "[REDACTED_STEAMSHIP_KEY]"
+            )
+            or "",
             type="password",
         )
         if api_key:
